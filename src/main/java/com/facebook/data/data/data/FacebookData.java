@@ -14,4 +14,15 @@ public class FacebookData {
         };
 
     }
+
+    //Args: Login Credentials
+    @DataProvider(name="Login")
+    public Object[][] Login(){  //X = how many times will test be run, Y= What arguments will we pass into the test
+        return new Object[][] {
+                {"0655676440", "Zlaja2020", null}, //Positive TC
+                {"123", "Test", }, //Negative TC
+               // {"", "Test"}
+
+        };
+    }
 }
