@@ -20,9 +20,10 @@ public class FacebookData {
     public Object[][] Login(){  //X = how many times will test be run, Y= What arguments will we pass into the test
         return new Object[][] {
                 {"0655676440", "Zlaja2020", null}, //Positive TC
-                {"123", "Test", }, //Negative TC
-               // {"", "Test"}
+                {"", "Test","Log in to Facebook" }, //Negative TC
+               // {"test@test.com", "Test","Test user login from external network" }
 
-        };
+
+        }; //Please try again later "Test user login from external network"
     }
 }
