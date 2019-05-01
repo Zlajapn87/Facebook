@@ -22,7 +22,7 @@ public class Login_Test {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\zlatk\\OneDrive\\Desktop\\Selenium\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/Drivers/chromedriver.exe");
         driver = new ChromeDriver(); //Driver has to be created before the page.
         fbMainPage = PageFactory.initElements(driver, FacebookMainPage.class); //page factory
         fbLoginPage = PageFactory.initElements(driver, FacebookLoginPage.class); //page factory
