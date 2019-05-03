@@ -2,18 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name = "Login Tests">
-    <test name="P1 Test">
-        <groups>
-            <run>
-                <include name="p1"></include>
-                <exclude name="p2"></exclude>
-            </run>
-        </groups>
+
+    <test name="Test1">
+        <parameter name="language" value="en"></parameter>
+        <parameter name="browserType" value="chrome"></parameter>
         <classes>
-            <class name="com.facebook.tests.Login_Test">
-
-            </class>
+            <class name="com.facebook.tests.Login_Test"></class>
         </classes>
-
+    </test>
+    <test name="Test2">
+        <classes>
+            <class name="com.facebook.tests.SignUp_Test"></class>
+        </classes>
     </test>
 </suite>

@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
@@ -33,12 +34,13 @@ public class Login_Test {
         driver.quit();
     }
 
+    @Parameters({"language", "browserType"})
     @Test(groups = {"p1"}, dataProvider = "Login", dataProviderClass = FacebookData.class)
     public void FaceBookLoginPage(String email, String password, String errorType) {
-        driver.get(fbMainPage.PAGE_URL);
+        fbMainPage.loadPage();
         fbMainPage.setTtext_EmailLogin(email);
         fbMainPage.setTtext_PasswordLogin(password);
-        fbMainPage.clickOnButton(fbMainPage.button_Login);
+        fbMainPage.click_LoginButton();
 
         if (StringUtils.isBlank(errorType)) {
             boolean result =  fbLoginPage.checkBoxHeader(errorType);
