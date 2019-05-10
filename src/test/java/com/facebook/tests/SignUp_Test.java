@@ -4,6 +4,8 @@ import com.facebook.data.data.pages.FacebookMainPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -16,15 +18,17 @@ import static org.testng.Assert.*;
 public class SignUp_Test {
 
     public WebDriver driver;
+    public WebDriverWait wait;
     FacebookMainPage fbMainPage;
 
 
     @BeforeClass(alwaysRun=true)
     public void setup(){
 
-        System.setProperty("webdriver.chrome.driver", "src/main/Drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/Drivers/chromedriver_74.exe");
         driver = new ChromeDriver(); //Driver has to be created before the page.
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 5, 500);
         fbMainPage = PageFactory.initElements(driver, FacebookMainPage.class); //page factory
 
     }
